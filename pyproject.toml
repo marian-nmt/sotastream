@@ -1,0 +1,74 @@
+[project]
+name = "sotastream"
+version = "1.0.0.dev0"       # note: __init__.py:__version__ will get this via importlib.metadata
+description = """Sotastream is a command line tool that augments a batch of text and produces infinite stream of records."""
+readme = "README.md"
+requires-python = ">=3.6"
+license = { file = "LICENSE.txt" }
+keywords = [
+    "data augmentation",
+    "machine translation",
+    "natural language processing",
+    "text processing",
+    "text augmentation",
+    "machine learning",
+    "deep learning",
+    "artificial intelligence",
+]
+
+authors = [
+    { name = "Text MT @ Microsoft Translator", email = "marcinjd@microsoft.com" },
+]
+
+maintainers = [
+    { name = "Thamme Gowda", email = "thammegowda@microsoft.com" },
+    { name = "Roman Grundkiewicz", email = "roman.grundkiewicz@microsoft.com" },
+    { name = "Matt Post", email = "mattpost@microsoft.com" },
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+]
+
+dependencies = [
+    "titlecase",
+    "infinibatch",
+    "sentencepiece",
+    "mtdata >= 0.4.0",
+]
+
+[project.optional-dependencies]
+dev = ["black", "sphinx", "sphinx_rtd_theme"]
+test = ["pytest < 5.0.0", "pytest-cov[all]"]
+
+[project.urls]
+homepage = "https://github.com/marian-nmt/sotastream"
+documentation = "https://github.com/marian-nmt/sotastream"
+repository = "https://github.com/marian-nmt/sotastream"
+#changelog = ""
+
+[project.scripts]
+sotastream = "sotastream.cli:main"
+
+# all the above are project metadata, below is configuration for the build system
+# there are many build systems: setuptools, flit, poetry, etc.
+# we use setuptools here (because we are familiar with setup.py which uses it)
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+#where = ["src"]  # ["."] by default
+include = ["sotastream*"]  # ["*"] by default
+exclude = ["tests*", "tmp*", "build*", "dist*"]    # empty by default
+#####################
+
+[tool.black]
+line-length = 110
+target-version = ['py37', 'py38', 'py39']
+include = '\.pyi?$'
+skip-string-normalization = true
+
+[tool.pytest.ini_options]
+addopts = " -v"
