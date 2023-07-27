@@ -1,7 +1,3 @@
-"""
-
-"""
-
 import logging
 from typing import Tuple, Iterator, Union, List, Optional
 import random
@@ -16,10 +12,11 @@ logger = logging.getLogger(f"sotastream")
 
 @pipeline("mtdata")
 class MTDataPipeline(Pipeline):
-    """Pipeline from to mix datasets from mtdata.
+    """Pipeline to mix datasets from mtdata.
 
     To install mtdata, run `pip install mtdata`, or visit https://github.com/thammegowda/mtdata
-    To see the list of available datasets, run `mtdata list -id -l <src>-<tgt>`
+    To see the list of available datasets, run `mtdata list -id -l <src>-<tgt>` where <src>-<tgt>
+    are language pairs.
 
     Example #1:
         sotastream mtdata -lp en-de Statmt-news_commentary-16-deu-eng  Statmt-europarl-10-deu-eng
@@ -30,9 +27,9 @@ class MTDataPipeline(Pipeline):
     Example #3:
         sotastream mtdata -lp en-de Statmt-news_commentary-16-deu-eng,Statmt-europarl-10-deu-eng
 
-    Example #1 mixes the given two datasets with equal weights (i.e., 1:1).
-    Example #2 mixes the given two datasets with 1:2 ratio respectively.
-    Example #3 simply concatenates both datasets separated by command into a single dataset.
+    Example #1 mixes two datasets with equal weights (i.e., 1:1).
+    Example #2 mixes two datasets with 1:2 ratio respectively.
+    Example #3 simply concatenates both datasets separated by comma into a single dataset.
        Therefore, the resulting mixture weights are proportional to the number of segments in each dataset.
 
     The `--langs|-lp <src>-<tgt>` argument is used to enforce compatibility between the specified datasets and ensure correct ordering of source and target languages
@@ -45,9 +42,9 @@ class MTDataPipeline(Pipeline):
         langs: Tuple[str, str] = None,
         **kwargs,
     ):
-        """Initialize MTData pipeline.
+        """Initialize mtdata pipeline.
 
-        :param data_ids: List of MTData IDs
+        :param data_ids: List of mtdata IDs
         :param mix_weights: Mixture weights, defaults to None (i.e., equal weights)
         :param langs: Tuple of source and target language codes to enforce compatibility with specified dataset ids,
             defaults to None (not enforced)
