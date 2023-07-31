@@ -8,8 +8,8 @@ SPHINXBUILD   ?= sphinx-build
 SPHINXAPIDOC  ?= sphinx-apidoc
 SOURCEDIR     = .
 BUILDDIR      = build
-MODULE_NAME	  = sotastream
-CODEDIR		  = ../$(MODULE_NAME)
+MODULE_NAME      = sotastream
+CODEDIR          = ../$(MODULE_NAME)
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -21,8 +21,5 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 
 %: Makefile
-	@if [ $@ = "html" ]; then \
-		$(SPHINXAPIDOC) -o "$(SOURCEDIR)/api" --force "$(CODEDIR)" -H "$(MODULE_NAME) API";\
-	fi
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@if [ $@ = "clean" ]; then rm -rf "$(SOURCEDIR)/api/"; fi
