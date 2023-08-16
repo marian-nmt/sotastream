@@ -44,10 +44,13 @@ language = 'en'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
+
 def run_apidoc(_):
     # from sphinx.apidoc import main   # for older Sphinx <= 1.6
     from sphinx.ext.apidoc import main  # for newer
+
     main(['-e', '-o', str(DOCS_DIR / 'api'), str(SRC_DIR), '--force'])
+
 
 def setup(app):
     app.connect('builder-inited', run_apidoc)

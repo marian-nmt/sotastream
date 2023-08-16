@@ -7,29 +7,32 @@ pipeline. It uses `infinibatch` internally to generate an infinite
 stream of shuffled training data and provides a means for on-the-fly
 data manipulation, augmentation, mixing, and sampling.
 
-## Cloning and initialization
 
-To begin, clone the repository:
+## Setup
 
+To install from PyPI (https://pypi.org/project/sotastream/)
+```bash
+pip install sotastream
 ```
-git clone https://github.com/marian-nmt/sotastream
-```
 
-You can then install it as follows.
+*Developer Setup:*
 
 ```bash
+# To begin, clone the repository:
+git clone https://github.com/marian-nmt/sotastream
 cd sotastream
 
-python -m pip install .
-python -m pip install --no-deps .   # install without dependencies
-```
-If you already have your own version of requirements, add ` --no-deps / --no-dependencies` flag to skip installing dependencies.
 
-Entry points
+python -m pip install .
+
+# alternatively, install in --editable model
+python -m pip install -e .
+```
+
+*Entry points*
+
 * As a module:  `python -m sotastream`
 * As a bin in your $PATH: `sotastream`
-* Via path to script: `python path/to/cli.py`. For convenience, cli.py is in the root of repository
-
 
 ## Development
 
