@@ -1,6 +1,8 @@
-# Sotastream
+# Sotastream 
+[![image](http://img.shields.io/pypi/v/sotastream.svg)](https://pypi.python.org/pypi/sotastream/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Read the Docs](https://img.shields.io/readthedocs/sotastream.svg)](https://sotastream.readthedocs.io/)
 
-## Introduction
 
 Sotastream is a tool for data augmentation for training
 pipeline. It uses `infinibatch` internally to generate an infinite
@@ -21,16 +23,13 @@ pip install sotastream
 # To begin, clone the repository:
 git clone https://github.com/marian-nmt/sotastream
 cd sotastream
-
-
+# option 1: 
 python -m pip install .
-
-# alternatively, install in --editable model
+# option 2: install in --editable model
 python -m pip install -e .
 ```
 
 *Entry points*
-
 * As a module:  `python -m sotastream`
 * As a bin in your $PATH: `sotastream`
 
@@ -126,12 +125,15 @@ You can find some examples in `test/dummy_pipeline.py`, as well as the real exam
 
 Sotastream is developed by _TextMT Team_ @ Microsoft Translator.
 
-* Roman Grundkiewicz
-* Thamme Gowda
-* Rohit Jain
-* Huda Khayrallah
-* Matt Post
-* Marcin Junczys-Dowmunt
-
-
-> We are finishing up a paper that describes `sotastream` in detail; it will be linked here. 
+If you use this tool, please cite: 
+```bibtex
+@misc{post2023sotastream,
+      title={SOTASTREAM: A Streaming Approach to Machine Translation Training}, 
+      author={Matt Post and Thamme Gowda and Roman Grundkiewicz and Huda Khayrallah and Rohit Jain and Marcin Junczys-Dowmunt},
+      year={2023},
+      eprint={2308.07489},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+Paper link: https://arxiv.org/abs/2308.07489 
