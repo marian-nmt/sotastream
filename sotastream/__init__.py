@@ -17,7 +17,9 @@ def get_version():
 
     return None
 
+
 __version__ = get_version()
+
 
 class Defaults:
     """
