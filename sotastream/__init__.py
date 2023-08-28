@@ -1,22 +1,13 @@
 import os
 import sys
+from pathlib import Path
 
 sys.dont_write_bytecode = True
 
 
 def get_version():
-    package_dir = os.path.dirname(__file__)
-    root_dir = os.path.abspath(os.path.join(package_dir, '..'))
-    pyproject_path = os.path.join(root_dir, 'pyproject.toml')
-
-    if os.path.exists(pyproject_path):
-        with open(pyproject_path) as fh:
-            for line in fh:
-                if line.startswith("version ="):
-                    return line.split('"')[1].strip()
-
-    return None
-
+    version_file = Path(__file__).parent / 'version.txt'
+    return version_file.read_text().strip()
 
 __version__ = get_version()
 
