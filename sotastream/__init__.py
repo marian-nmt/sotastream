@@ -1,15 +1,7 @@
-import os
 import sys
-from pathlib import Path
 
+__version__ = "1.0.1"
 sys.dont_write_bytecode = True
-
-
-def get_version():
-    version_file = Path(__file__).parent / 'version.txt'
-    return version_file.read_text().strip()
-
-__version__ = get_version()
 
 
 class Defaults:

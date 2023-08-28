@@ -59,7 +59,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.dynamic]
-version = {file = "sotastream/version.txt"}
+version = {attr = "sotastream.__version__"}
 
 [tool.setuptools.packages.find]
 #where = ["src"]  # ["."] by default
