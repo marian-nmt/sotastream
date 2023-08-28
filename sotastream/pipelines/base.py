@@ -1,6 +1,7 @@
 from abc import ABC
 import itertools
 import logging
+import random
 import os
 
 from sotastream import Defaults
@@ -40,11 +41,12 @@ class Pipeline(ABC):
         self.queue_buffer_size = kwargs.get("queue_buffer_size", Defaults.QUEUE_BUFFER_SIZE)
         self.is_quiet = kwargs.get("quiet", Defaults.QUIET)
         self.seed = kwargs.get("seed", Defaults.SEED)
-        rand.seed(args.seed)
         self.max_tokens = kwargs.get("max_tokens", Defaults.MAX_TOKENS)
         self.sample_length = kwargs.get("sample_length", Defaults.SAMPLE_LENGTH)
         self.separator = kwargs.get("separator", Defaults.SEPARATOR)
         self.shuffle = not kwargs.get("no_shuffle", not Defaults.SHUFFLE)
+
+        random.seed(self.seed)
 
         # These are set in the environment of the caller when multiprocessing is enabled.
         # Each sub-process gets a distinct worker ID and knows the total number of workers.
