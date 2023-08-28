@@ -1,11 +1,23 @@
+import os
 import sys
 
 sys.dont_write_bytecode = True
 
-from importlib import metadata
 
-__version__ = metadata.version(__package__)
+def get_version():
+    package_dir = os.path.dirname(__file__)
+    root_dir = os.path.abspath(os.path.join(package_dir, '..'))
+    pyproject_path = os.path.join(root_dir, 'pyproject.toml')
 
+    if os.path.exists(pyproject_path):
+        with open(pyproject_path) as fh:
+            for line in fh:
+                if line.startswith("version ="):
+                    return line.split('"')[1].strip()
+
+    return None
+
+__version__ = get_version()
 
 class Defaults:
     """

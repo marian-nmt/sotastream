@@ -40,6 +40,7 @@ class Pipeline(ABC):
         self.queue_buffer_size = kwargs.get("queue_buffer_size", Defaults.QUEUE_BUFFER_SIZE)
         self.is_quiet = kwargs.get("quiet", Defaults.QUIET)
         self.seed = kwargs.get("seed", Defaults.SEED)
+        rand.seed(args.seed)
         self.max_tokens = kwargs.get("max_tokens", Defaults.MAX_TOKENS)
         self.sample_length = kwargs.get("sample_length", Defaults.SAMPLE_LENGTH)
         self.separator = kwargs.get("separator", Defaults.SEPARATOR)
@@ -102,19 +103,9 @@ class Pipeline(ABC):
 
         parser.add_argument("--spm", help="SPM model (for more accurate length calculation")
         parser.add_argument(
-            "--sample-length",
-            action="store_true",
-            help="Whether to fill each sample with the maximum tokens (default) or first sample a length (uniformly at random).",
-        )
-        parser.add_argument(
             "--separator",
             default=" ",
             help="String to use when joining sentences for data augmentation (default: '%(default)s').",
-        )
-        parser.add_argument(
-            "--augment",
-            action="store_true",
-            help="Whether to add capitalization and target-copy augmentations",
         )
         parser.add_argument(
             "--max-joined-tokens",

@@ -1,6 +1,6 @@
 [project]
 name = "sotastream"
-version = "1.0.0"       # note: __init__.py:__version__ will get this via importlib.metadata
+version = "1.0.1"       # note: __init__.py:__version__ reads from here, make sure to use double quotes
 description = """Sotastream is a command line tool that augments a batch of text and produces infinite stream of records."""
 readme = "README.md"
 requires-python = ">=3.6"
