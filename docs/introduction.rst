@@ -10,31 +10,37 @@ uses `infinibatch <https://github.com/microsoft/infinibatch>`_ internally to gen
 shuffled training data and provides a means for on-the-fly data
 manipulation, augmentation, mixing, and sampling.
 
-Cloning and initialization
---------------------------
 
-To begin, clone the repository:
 
-::
 
-   git clone https://github.com/marian-nmt/sotastream
+Setup
+-----
 
-You can then install it as follows.
+To install from PyPI (https://pypi.org/project/sotastream/)
+
 
 .. code:: bash
 
+   pip install sotastream
+
+
+*Developer Setup:*
+
+.. code:: bash
+
+   # To begin, clone the repository:
+   git clone https://github.com/marian-nmt/sotastream
    cd sotastream
-
+   # option 1: 
    python -m pip install .
-   python -m pip install --no-deps .   # install without dependencies
+   # option 2: install in --editable mode
+   python -m pip install -e .
 
-If you already have your own version of requirements, add
-``--no-deps / --no-dependencies`` flag to skip installing dependencies.
 
-Entry points \* As a module: ``python -m sotastream`` \* As a bin in
-your $PATH: ``sotastream`` \* Via path to script:
-``python path/to/cli.py``. For convenience, cli.py is in the root of
-repository
+*Entry points*
+* As a module:  `python -m sotastream`
+* As a bin in your $PATH: `sotastream`
+
 
 Development
 -----------
@@ -94,11 +100,8 @@ sotastream will split them to checksummed folders under
 
    python -m sotastream example parallel.tsv.gz backtrans.tsv.gz
 
-(The garbage file is assumed to have just a single column of data, which
-is copied).
-
-There are currently two main pipelines: “default”, and “wmt”. These vary
-according to the data sources they take as well as the other options
+There are currently two main pipelines: “default”, and “wmt”.
+These vary according to the data sources they take as well as the other options
 available to them.
 
 There are global options that control behavioral aspects such as
@@ -116,7 +119,7 @@ can see these by running
    # see wmt pipeline options
    python -m sotastream wmt -h
 
-Don’t cross the streams!
+Don't cross the streams!
 ------------------------
 
 Sotastream workflows build a directed acyclic graph (DAG) consisting of
