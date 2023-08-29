@@ -78,8 +78,6 @@ to checksummed folders under `/tmp/sotastream/{checksum}`:
 python -m sotastream example parallel.tsv.gz backtrans.tsv.gz
 ```
 
-(The garbage file is assumed to have just a single column of data, which is copied).
-
 There are currently two main pipelines: "default", and "wmt". These vary according to
 the data sources they take as well as the other options available to them.
 

@@ -1,10 +1,7 @@
 import sys
 
+__version__ = "1.0.1"
 sys.dont_write_bytecode = True
-
-from importlib import metadata
-
-__version__ = metadata.version(__package__)
 
 
 class Defaults:

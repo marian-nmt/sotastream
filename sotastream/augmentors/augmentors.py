@@ -75,8 +75,6 @@ def DataSource(
         instance_rank = 0
         logger.info(f"Opening path {path}")
 
-    random.seed(seed)
-
     # Worker ID i will only see every ith chunk
     chunk_file_paths = []
     total_chunks = 0

@@ -1,6 +1,6 @@
 [project]
 name = "sotastream"
-version = "1.0.0"       # note: __init__.py:__version__ will get this via importlib.metadata
+dynamic = ["version"]   # see [tool.setuptools.dynamic] below
 description = """Sotastream is a command line tool that augments a batch of text and produces infinite stream of records."""
 readme = "README.md"
 requires-python = ">=3.6"
@@ -57,6 +57,9 @@ sotastream = "sotastream.cli:main"
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = {attr = "sotastream.__version__"}
 
 [tool.setuptools.packages.find]
 #where = ["src"]  # ["."] by default
