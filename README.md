@@ -1,4 +1,4 @@
-# Sotastream 
+# Sotastream
 [![image](http://img.shields.io/pypi/v/sotastream.svg)](https://pypi.python.org/pypi/sotastream/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Read the Docs](https://img.shields.io/readthedocs/sotastream.svg)](https://sotastream.readthedocs.io/)
@@ -23,9 +23,9 @@ pip install sotastream
 # To begin, clone the repository:
 git clone https://github.com/marian-nmt/sotastream
 cd sotastream
-# option 1: 
+# option 1:
 python -m pip install .
-# option 2: install in --editable model
+# option 2: install in --editable mode
 python -m pip install -e .
 ```
 

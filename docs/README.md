@@ -26,3 +26,8 @@ twine upload -r testpypi dist/*
 twine upload -r pypi dist/*
 
 ```
+
+
+## Update Docs
+
+Go to https://readthedocs.org/projects/sotastream/ and click/touch "Build" button.
