@@ -124,14 +124,29 @@ You can find some examples in `test/dummy_pipeline.py`, as well as the real exam
 Sotastream is developed by _TextMT Team_ @ Microsoft Translator.
 
 If you use this tool, please cite: 
+Paper link: https://arxiv.org/abs/2308.07489  | https://aclanthology.org/2023.nlposs-1.13/
+
+
 ```bibtex
-@misc{post2023sotastream,
-      title={SOTASTREAM: A Streaming Approach to Machine Translation Training}, 
-      author={Matt Post and Thamme Gowda and Roman Grundkiewicz and Huda Khayrallah and Rohit Jain and Marcin Junczys-Dowmunt},
-      year={2023},
-      eprint={2308.07489},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{post-etal-2023-sotastream,
+    title = "{SOTASTREAM}: A Streaming Approach to Machine Translation Training",
+    author = "Post, Matt  and
+      Gowda, Thamme  and
+      Grundkiewicz, Roman  and
+      Khayrallah, Huda  and
+      Jain, Rohit  and
+      Junczys-Dowmunt, Marcin",
+    editor = "Tan, Liling  and
+      Milajevs, Dmitrijs  and
+      Chauhan, Geeticka  and
+      Gwinnup, Jeremy  and
+      Rippeth, Elijah",
+    booktitle = "Proceedings of the 3rd Workshop for Natural Language Processing Open Source Software (NLP-OSS 2023)",
+    month = dec,
+    year = "2023",
+    address = "Singapore, Singapore",
+    publisher = "Empirical Methods in Natural Language Processing",
+    url = "https://aclanthology.org/2023.nlposs-1.13",
+    pages = "110--119",
 }
 ```
-Paper link: https://arxiv.org/abs/2308.07489 
