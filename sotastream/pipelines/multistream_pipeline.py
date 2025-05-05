@@ -12,7 +12,7 @@ logger = logging.getLogger(f"sotastream")
 
 @pipeline("multistream")
 class MultiStreamPipeline(Pipeline):
-    """Pipeline for mixing multiple (or variable) number opf datasources.
+    """Pipeline for mixing multiple (or variable) number of datasources.
 
     This pipeline takes one more more data paths and mixes them together as given by --mix-weights parameter (default: equal ratios i.e. balance the sources).
     Example usecase: classification task, where each data stream is per class (default mix ratio is to balance classes)
